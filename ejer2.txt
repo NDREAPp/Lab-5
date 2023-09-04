@@ -1,0 +1,18 @@
+usuario = input("Hola, ingresa una serie de números, por favor sepáralos con espacios: ")
+
+numerosSerie = usuario.split()
+
+numeros = [int(numero) for numero in numerosSerie]
+
+n = len(numeros)
+for i in range(n - 1):
+    min_index = i
+    for j in range(i + 1, n):
+        if numeros[j] < numeros[min_index]:
+            min_index = j
+    numeros[i], numeros[min_index] = numeros[min_index], numeros[i]
+
+print("Esta es la serie de números de manera ordenada:")
+for numero in numeros:
+    print(numero, end=" ")
+    
